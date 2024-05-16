@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+li {
+  list-style-type: none;
+}
+:root{
+  --primary-color: #495E57;
+  --primary-color-2: #F4CE14;
+  --secondary-color: #EE9972;
+  --secondary-color-2:#FBDABB;
+  --highlight-color: #EDEFEE;
+  --higtlight-color-2: #333;
+  --sub-color: #fff;
+  --title: 500 64pt/1 'Markazi Text', sans-serif;
+  --sub-title: 400 40pt/1 'Markazi Text', sans-serif;
+  --lead-text: 500 18pt/1 Karla, sans-serif;
+  --section-title: bold 20pt/1 Karla, sans-serif; /* this need text-transform: uppercase */
+  --section-category: 800 16pt/1 Karla, sans-serif;
+  --card-title: bold 18pt/1 Karla, sans-serif;
+  --paragraph-text: 400 16pt/1.5 Karla, sans-serif; /* 65 charater per line max-width:65ch*/
+  --highlight-text: 500 16pt/1.5 Karla, sans-serif; /* e.g price*/
+}
+/* ht end reset css  */
+#root{
+  display: grid;
+  gap: 0;
+  max-height: 150vh;
+  grid-template-rows: 1fr auto auto;
+}
+#root > * {
+  grid-column: 1/span 12;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+header h1 {
+  display: inline-block;
+  max-height: 76px;
+  overflow: hidden;
+}
+header menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header menu a {
+  font: var(--lead-text);
+  padding: 0 0.3em;
+  flex: 1 1 auto;
+}
+/* ht end header  */
+main {
+  display: grid;
+  grid-template-rows: auto;
+}
+.hero{
+  background-color: var(--primary-color);
+}
+.hero h2 {
+  font: var(--title);
+  color: var(--primary-color-2);
+}
+.hero h3 {
+  font: var(--sub-title);
+  color: var(--sub-color);
+}
+.hero p {
+  font: var(--lead-text);
+  color: var(--sub-color);
+}
+.hero .btn {
+  display: inline-block;
+  background-color: var(--primary-color-2);
+  font: var(--lead-text);
+  border-radius: 5px;
+  margin: 72px 0 28px;
+  padding: 20px;
+}
+.hero img {
+  border-radius: 50px;
+}
+/* ht end main  */
+footer {
+  grid-column: 1/ span 12;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 4em 0;
+}
+footer nav {
+  flex: 0 1 auto;
+  margin : 1em 0;
+  max-width : 17ch;
+}
+footer nav h4 {
+  font: var(--section-category);
+  min-height: 32pt;
+}
+.horizontal-navbar li a,
+footer li a {
+  font: var(--lead-text);
+  padding : unset;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 992px) {
+  #root{
+    grid-template-columns: repeat(12, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+  #root > header,
+  #root > footer{
+    grid-column: 3/span 8;
+  }
+  .container {
+    grid-column: 3/span 8;
+  }
+  header {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  main > *{
+    grid-column: 3/span 8;
+  }
+  .hero {
+    grid-column: 1/span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+  }
+  .content_hero{
+    position: relative;
+    margin-top: 55px;
+  }
+  .content_hero p{
+    max-width: 50%;
+  }
+  .content_hero img {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
   }
 }
