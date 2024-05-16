@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/miniProject__reactLittleLemonRestaurant/static/css/main.f2ae6658.css",
+    "main.js": "/miniProject__reactLittleLemonRestaurant/static/js/main.2979f2ea.js",
+    "static/js/453.2938078b.chunk.js": "/miniProject__reactLittleLemonRestaurant/static/js/453.2938078b.chunk.js",
+    "static/media/Mario and Adrian A.jpg": "/miniProject__reactLittleLemonRestaurant/static/media/Mario and Adrian A.7f44c6d6e341a27d14b3.jpg",
+    "static/media/Mario and Adrian B.jpg": "/miniProject__reactLittleLemonRestaurant/static/media/Mario and Adrian B.6ba0e06bfa9c1ea75109.jpg",
+    "static/media/greek salad.jpg": "/miniProject__reactLittleLemonRestaurant/static/media/greek salad.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/miniProject__reactLittleLemonRestaurant/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/logo-footer.png": "/miniProject__reactLittleLemonRestaurant/static/media/logo-footer.2c859235d6c57bb54176.png",
+    "static/media/logo.svg": "/miniProject__reactLittleLemonRestaurant/static/media/logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "index.html": "/miniProject__reactLittleLemonRestaurant/index.html",
+    "main.f2ae6658.css.map": "/miniProject__reactLittleLemonRestaurant/static/css/main.f2ae6658.css.map",
+    "main.2979f2ea.js.map": "/miniProject__reactLittleLemonRestaurant/static/js/main.2979f2ea.js.map",
+    "453.2938078b.chunk.js.map": "/miniProject__reactLittleLemonRestaurant/static/js/453.2938078b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2ae6658.css",
+    "static/js/main.2979f2ea.js"
+  ]
+}
