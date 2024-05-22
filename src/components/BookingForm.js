@@ -53,6 +53,7 @@ const BookingForm = ({ availableTimes, onSubmit }) => {
             type="date"
             min={new Date().toISOString().slice(0, 10)}
             required
+            aria-label="On Click"
             aria-invalid={touched.date && Boolean(errors.date)}
             aria-describedby={touched.date && errors.date ? 'date-error' : undefined}
           />
@@ -68,6 +69,7 @@ const BookingForm = ({ availableTimes, onSubmit }) => {
             id="time"
             name="time"
             required
+            aria-label="On Click"
             aria-invalid={touched.time && Boolean(errors.time)}
             aria-describedby={touched.time && errors.time ? 'time-error' : undefined}
           >
@@ -93,6 +95,7 @@ const BookingForm = ({ availableTimes, onSubmit }) => {
             min={1}
             max={10}
             required
+            aria-label="On Click"
             aria-invalid={touched.numberOfGuests && Boolean(errors.numberOfGuests)}
             aria-describedby={
               touched.numberOfGuests && errors.numberOfGuests
@@ -112,6 +115,7 @@ const BookingForm = ({ availableTimes, onSubmit }) => {
             name="occasion"
             list="occasion-list"
             required
+            aria-label="On Click"
             aria-invalid={touched.occasion && Boolean(errors.occasion)}
             aria-describedby={
               touched.occasion && errors.occasion ? 'occasion-error' : undefined
@@ -132,6 +136,7 @@ const BookingForm = ({ availableTimes, onSubmit }) => {
 
           <button
             type="submit"
+            aria-label="On Click"
             disabled={isSubmitting || Object.keys(errors).length > 0}
           >
             Make Your reservation
