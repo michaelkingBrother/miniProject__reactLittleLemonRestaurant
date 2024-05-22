@@ -1,17 +1,14 @@
 import { useState } from "react";
 
-const BookingForm = () =>{
+const BookingForm = ({availableTimes, dispatchAvailableTimes}) =>{
 
     let curentDate = new Date().toISOString().slice(0, 10);
     let currentTime = new Date().toISOString().slice(11, 19);
     let occasionList = ['Birthday', 'Anniversary'];
-    
     const handleClick = (e) =>{
         e.preventDefault();
         console.log(bookingInfor)
     }
-    
-    const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
     const [bookingInfor, setBookingInfor] = useState({
         Date: curentDate,
         Time: currentTime,
@@ -28,11 +25,22 @@ const BookingForm = () =>{
              id="res-date"
              type="date"
              value={bookingInfor.Date}
-             onChange={
-                e => {setBookingInfor({
-                    ...bookingInfor,
-                    Date: e.target.value});
-                }}
+            //  onChange={
+            //     e => {setBookingInfor({
+            //         ...bookingInfor,
+            //         Date: e.target.value});
+            //     }
+            //     dispatchAvailableTimes(e.target.value)
+            //  }
+             onChange={(event) => {
+                const selectedDate = event.target.value;
+                setBookingInfor((prevFormData) => ({
+                  ...prevFormData,
+                  Date: selectedDate,
+                }));
+                dispatchAvailableTimes(selectedDate);
+              }
+             }
             />
             <label htmlFor="res-time">Choose time</label>
             <select
@@ -88,4 +96,3 @@ const BookingForm = () =>{
         </form>
     )}
 export default BookingForm;
-   
