@@ -1,11 +1,15 @@
-import BookingForm from "./BookingForm"
+import { useEffect, useState } from 'react';
+import BookingForm from './BookingForm';
 
-const BookingPage = ({availableTimes, dispatchAvailableTimes }) => (
+const BookingPage = ({ availableTimes, updateTimes, submitForm }) => {
+  // ... previous code
+
+  return (
     <main>
-        <BookingForm 
-         availableTimes={availableTimes}
-         dispatchAvailableTimes ={dispatchAvailableTimes}
-        />
+      <h1>Make a Reservation</h1>
+      <BookingForm availableTimes={availableTimes} onSubmit={submitForm} />
     </main>
-)
-export default BookingPage
+  );
+};
+
+export default BookingPage;

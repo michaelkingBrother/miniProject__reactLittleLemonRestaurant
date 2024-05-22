@@ -1,24 +1,26 @@
 import { useState } from "react";
 
-const BookingForm = ({availableTimes, dispatchAvailableTimes}) =>{
+const BookingForm = ({availableTimes, dispatchAvailableTimes, onSubmit}) =>{
 
     let curentDate = new Date().toISOString().slice(0, 10);
     let currentTime = new Date().toISOString().slice(11, 19);
     let occasionList = ['Birthday', 'Anniversary'];
-    const handleClick = (e) =>{
-        e.preventDefault();
-        console.log(bookingInfor)
-    }
+
     const [bookingInfor, setBookingInfor] = useState({
         Date: curentDate,
         Time: currentTime,
         NumberOfGuests: 1,
         Occasion: null,
     })
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(bookingInfor);
+      };
     return(
         <form
          style={{display: 'grid', maxWidth: '200px', gap: '20px', margin: 'auto'}}
-         onSubmit={handleClick}
+         onSubmit={handleSubmit}
         >
             <label htmlFor="res-date">Choose date</label>
             <input
@@ -92,7 +94,7 @@ const BookingForm = ({availableTimes, dispatchAvailableTimes}) =>{
                     <option key={index} value={item}>{item}</option>
                 ))}
             </datalist>
-            <input type="submit" value="Make Your reservation"></input>
+            <input type="submit" value="Make Your reservation" role="button"></input>
         </form>
     )}
 export default BookingForm;

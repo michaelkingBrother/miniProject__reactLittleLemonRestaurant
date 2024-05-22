@@ -81,7 +81,7 @@ main {
   font: var(--lead-text);
   color: var(--sub-color);
 }
-.hero .btn {
+.hero .btn, button, [role='button'] {
   display: inline-block;
   background-color: var(--primary-color-2);
   font: var(--lead-text);
